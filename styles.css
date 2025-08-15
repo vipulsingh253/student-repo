@@ -325,3 +325,17 @@ footer p {
 .table-container::-webkit-scrollbar-thumb:hover {
     background: #5a67d8;
 }
+
+.github-btn {
+    background-color: #1f2937; 
+    color: white; 
+    padding: 0.5rem 1rem; 
+    border-radius: 0.5rem; 
+    text-decoration: none; 
+    display: inline-block; 
+    transition: background-color 0.2s ease-in-out;
+}
+
+.github-btn:hover {
+    background-color: #374151; 
+}
