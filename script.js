@@ -34,7 +34,7 @@ function handleFormSubmit(e) {
         contact: document.getElementById('contactNo').value.trim()
     };
 
-    // ✅ Run validation here
+    
     if (!validateForm(formData)) {
         return; // Stop if validation fails
     }
