@@ -33,10 +33,13 @@ function handleFormSubmit(e) {
         email: document.getElementById('emailId').value.trim(),
         contact: document.getElementById('contactNo').value.trim()
     };
-    
-    
-      // Check if we're editing or adding new student
 
+    // ✅ Run validation here
+    if (!validateForm(formData)) {
+        return; // Stop if validation fails
+    }
+
+    // Check if we're editing or adding new student
     if (editingIndex >= 0) {
         // Update existing student
         studentsData[editingIndex] = formData;
@@ -54,11 +57,8 @@ function handleFormSubmit(e) {
     saveDataToStorage();
     displayStudents();
     clearForm();
-}if (!validateForm(formData)) {
-        return; // Stop if validation fails
-    }
-    
-  
+}
+
 
 // Function to validate form inputs
 function validateForm(data) {
