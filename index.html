@@ -1,113 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A simple student registration system to manage student records">
-    <meta name="keywords" content="student, registration, management, records">
-    <meta name="author" content="Student Developer">
-    <title>Student Registration System </title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Header Section -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A simple student registration system to manage student records"
+    />
+    <meta
+      name="keywords"
+      content="student, registration, management, records"
+    />
+    <meta name="author" content="Student Developer" />
+    <title>Student Registration System</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header Section  -->
     <header>
-        <div class="container">
-            <h1> Student Registration System</h1>
-            <p class="description">
-                A simple and user-friendly system to register, view, edit, and delete student records. 
-                
-            </p>
-        </div>
+      <div class="container">
+        <h1>Student Registration System</h1>
+        <p class="description">
+          A simple and user-friendly system to register, view, edit, and delete
+          student records.
+        </p>
+      </div>
     </header>
 
     <!-- Main Content -->
     <main class="container">
-        <!-- Registration Form Section -->
-        <section class="form-section">
-            <h2>Register New Student</h2>
-            <form id="studentForm">
-                <div class="form-group">
-                    <label for="studentName">Student Name:</label>
-                    <input type="text" id="studentName" name="studentName" placeholder="Enter full name" required>
-                    <span class="error" id="nameError"></span>
-                </div>
+      <!-- Registration Form Section -->
+      <section class="form-section">
+        <h2>Register New Student</h2>
+        <form id="studentForm">
+          <div class="form-group">
+            <label for="studentName">Student Name:</label>
+            <input
+              type="text"
+              id="studentName"
+              name="studentName"
+              placeholder="Enter full name"
+              required
+            />
+            <span class="error" id="nameError"></span>
+          </div>
 
-                <div class="form-group">
-                    <label for="studentId">Student ID:</label>
-                    <input type="text" id="studentId" name="studentId" placeholder="Enter student ID (numbers only)" required>
-                    <span class="error" id="idError"></span>
-                </div>
+          <div class="form-group">
+            <label for="studentId">Student ID:</label>
+            <input
+              type="text"
+              id="studentId"
+              name="studentId"
+              placeholder="Enter student ID (numbers only)"
+              required
+            />
+            <span class="error" id="idError"></span>
+          </div>
 
-                <div class="form-group">
-                    <label for="emailId">Email ID:</label>
-                    <input type="email" id="emailId" name="emailId" placeholder="Enter email address" required>
-                    <span class="error" id="emailError"></span>
-                </div>
+          <div class="form-group">
+            <label for="emailId">Email ID:</label>
+            <input
+              type="email"
+              id="emailId"
+              name="emailId"
+              placeholder="Enter email address"
+              required
+            />
+            <span class="error" id="emailError"></span>
+          </div>
 
-                <div class="form-group">
-                    <label for="contactNo">Contact Number:</label>
-                    <input type="text" id="contactNo" name="contactNo" placeholder="Enter 10-digit mobile number" required>
-                    <span class="error" id="contactError"></span>
-                </div>
+          <div class="form-group">
+            <label for="contactNo">Contact Number:</label>
+            <input
+              type="text"
+              id="contactNo"
+              name="contactNo"
+              placeholder="Enter 10-digit mobile number"
+              required
+            />
+            <span class="error" id="contactError"></span>
+          </div>
 
-                <div class="form-buttons">
-                    <button type="submit" id="submitBtn">Add Student</button>
-                    <button type="button" id="cancelBtn" style="display: none;">Cancel Edit</button>
-                </div>
-            </form>
-        </section>
+          <div class="form-buttons">
+            <button type="submit" id="submitBtn">Add Student</button>
+            <button type="button" id="cancelBtn" style="display: none">
+              Cancel Edit
+            </button>
+          </div>
+        </form>
+      </section>
 
-        <!-- Display Section -->
-        <section class="display-section">
-            <h2>Registered Students</h2>
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Search by name or ID...">
-            </div>
-            
-            <div class="table-container" id="tableContainer">
-                <table id="studentsTable">
-                    <thead>
-                        <tr>
-                            <th>S.No.</th>
-                            <th>Student Name</th>
-                            <th>Student ID</th>
-                            <th>Email ID</th>
-                            <th>Contact Number</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="studentsTableBody">
-                        <!-- Student records will be added here dynamically -->
-                    </tbody>
-                </table>
-                <div id="noRecords" class="no-records">
-                    <p>No student records found.</p>
-                </div>
-            </div>
-        </section>
+      <!-- Display Section -->
+      <section class="display-section">
+        <h2>Registered Students</h2>
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search by name or ID..."
+          />
+        </div>
+
+        <div class="table-container" id="tableContainer">
+          <table id="studentsTable">
+            <thead>
+              <tr>
+                <th>S.No.</th>
+                <th>Student Name</th>
+                <th>Student ID</th>
+                <th>Email ID</th>
+                <th>Contact Number</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="studentsTableBody">
+              <!-- Student records will be added here  -->
+            </tbody>
+          </table>
+          <div id="noRecords" class="no-records">
+            <p>No student records found.</p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Student Registration System. Created for educational purposes.</p>
-        </div>
-        <div>
-            <a href="https://github.com/vipulsingh253/weather-repo.git" 
-       target="_blank" 
-        class="github-btn">click</a>
-       🌐 GitHub
-     </a>
-        </div>
-
- 
+      <div class="container">
+        <p>
+          &copy; 2025 Student Registration System. 
+        </p>
+      </div>
+      <div>
+        <a
+          href="https://github.com/vipulsingh253/weather-repo.git"
+          target="_blank"
+          class="github-btn"
+          > 🌐 GitHub
+        </a>
+      </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="script.js"></script>
-
-
-
-</body>
+  </body>
 </html>

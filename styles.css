@@ -29,7 +29,7 @@ header {
 }
 
 header h1 {
-    color: #4a5568;
+    color: #3e4b62;
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
     font-weight: bold;
@@ -327,7 +327,7 @@ footer p {
 }
 
 .github-btn {
-    background-color: #1f2937; 
+    background-color: #152e52; 
     color: white; 
     padding: 0.5rem 1rem; 
     border-radius: 0.5rem; 
@@ -337,5 +337,5 @@ footer p {
 }
 
 .github-btn:hover {
-    background-color: #374151; 
+    background-color: #465369; 
 }

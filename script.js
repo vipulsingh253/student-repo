@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Function for form submission
 function handleFormSubmit(e) {
-    e.preventDefault(); // Stop form from submitting normally 
+    e.preventDefault(); // Stop form from its default behaviour which is submitting
     
     // Get form data
     const formData = {
@@ -133,13 +133,13 @@ function showError(elementId, message) {
 // Function to clear all error messages
 function clearErrors() {
     const errorElements = document.querySelectorAll('.error');
-    errorElements.forEach(element => {
+    errorElements.forEach((element) => {
         element.textContent = '';
     });
     
     // Remove error class from input fields
     const inputElements = document.querySelectorAll('.form-group input');
-    inputElements.forEach(input => {
+    inputElements.forEach((input) => {
         input.classList.remove('error');
     });
 }
@@ -288,29 +288,6 @@ function loadDataFromStorage() {
 }
 
 // Additional utility functions
-
-// Function to export data (bonus feature)
-function exportData() {
-    if (studentsData.length === 0) {
-        alert('No data to export!');
-        return;
-    }
-    
-    // Create CSV content
-    let csvContent = 'Student Name,Student ID,Email,Contact Number\n';
-    studentsData.forEach(student => {
-        csvContent += `${student.name},${student.id},${student.email},${student.contact}\n`;
-    });
-    
-    // Create and download file
-    const blob = new Blob([csvContent], { type: 'text/csv' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'students_data.csv';
-    a.click();
-    window.URL.revokeObjectURL(url);
-}
 
 // Function to clear all data (with confirmation)
 function clearAllData() {
